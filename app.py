@@ -18,13 +18,14 @@ def cargar_modelo():
             data["dataframe_codificado_top5"],
         )
 
-modelo, dicc_estado, dicc_genero, dicc_estado_civil, dicc_estado_aprendiz, df_ref = cargar_modelo()
+model, dicc_estado, dicc_genero, dicc_estado_civil, dicc_estado_aprendiz, df_ref = cargar_modelo()
 
 # ------------------------------
 # Invertir los diccionarios para mostrar en el selectbox y mapear al código
 # ------------------------------
 inv_genero = {v: k for k, v in dicc_genero.items()}
 inv_estado_civil = {v: k for k, v in dicc_estado_civil.items()}
+inv_estado_aprendiz = {v: k for k, v in dicc_estado_aprendiz.items()}
 
 # ------------------------------
 # Interfaz de usuario
