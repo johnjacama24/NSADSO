@@ -40,19 +40,21 @@ estrato = st.slider("Estrato", 0, 10, 0)
 
 genero_opcion = st.selectbox("Género", list(dicc_genero.keys()))
 estado_civil_opcion = st.selectbox("Estado Civil", list(dicc_estado_civil.keys()))
+estado_aprendiz_opcion = st.selectbox("Estado Aprendiz", list(dicc_estado_aprendiz.keys()))
 
 # ------------------------------
 # Botón para predecir
 # ------------------------------
 if st.button("🔍 Realizar predicción"):
     try:
-        fila = df_ref.drop(columns=["Estado Aprendiz"]).iloc[0].copy()
+        fila = df_ref.drop(columns=["cluster"]).iloc[0].copy()
 
         fila["Edad"] = edad
         fila["Cantidad de quejas"] = quejas
         fila["Cantidad de Reversiones"] = reversiones
         fila["Género"] = dicc_genero[genero_opcion]
         fila["Estado Civil"] = dicc_estado_civil[estado_civil_opcion]
+        fila["Estado Aprendiz"] = dicc_estado_aprendiz[estado_aprendiz_opcion]
 
         entrada = pd.DataFrame([fila])
 
