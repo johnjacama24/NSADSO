@@ -18,7 +18,7 @@ def cargar_modelo():
             data["dataframe_codificado_top5"],
         )
 
-modelo, dicc_deserción, dicc_genero, dicc_estado_civil, dicc_estado_aprendiz, df_ref = cargar_modelo()
+modelo, dicc_desercion, dicc_genero, dicc_estado_civil, dicc_estado_aprendiz, df_ref = cargar_modelo()
 
 # ------------------------------
 # Invertir los diccionarios para mostrar en el selectbox y mapear al código
@@ -63,7 +63,7 @@ if st.button("🔍 Realizar predicción"):
         st.write("🔢 Código predicho:", pred_codificada)
         st.write("🔑 Claves diccionario deserción:", dicc_deserción.keys())
         st.write("🧪 Tipo:", type(pred_codificada))
-        pred_original = dicc_deserción.get(int(pred_codificada), "Desconocido")
+        pred_original = dicc_desercion.get(int(pred_codificada), "Desconocido")
 
         st.success(f"✅ Estado del aprendiz predicho: **{pred_original}**")
     except Exception as e:
