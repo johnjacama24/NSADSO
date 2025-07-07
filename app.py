@@ -60,7 +60,7 @@ if st.button("🔍 Realizar predicción"):
         entrada = pd.DataFrame([fila])
 
         pred_codificada = modelo.predict(entrada)[0]
-        pred_original = dicc_deserción.get(str(pred_codificada), "Desconocido")
+        pred_original = dicc_deserción.get(pred_codificada, "Desconocido")
 
         st.success(f"✅ Estado del aprendiz predicho: **{pred_original}**")
     except Exception as e:
