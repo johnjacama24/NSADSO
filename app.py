@@ -65,3 +65,5 @@ if st.button("🔍 Realizar predicción"):
         st.success(f"✅ Estado del aprendiz predicho: **{pred_original}**")
     except Exception as e:
         st.error(f"❌ Error durante la predicción: {e}")
+
+st.write("👉 Diccionario de estados:", dicc_estado)
