@@ -14,6 +14,7 @@ def cargar_modelo():
             data["label_encoder_mapping"],
             data["diccionario_genero"],
             data["diccionario_estado_civil"],
+            data["diccionario_estado_aprendiz"],
             data["dataframe_codificado_top5"],
         )
 
