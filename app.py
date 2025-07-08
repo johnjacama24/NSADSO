@@ -9,9 +9,9 @@ import pickle
 def cargar_modelo():
     with open("best_model.pkl", "rb") as file:
         data = pickle.load(file)
-# Convertir claves del diccionario a int si están como string
-        dicc_desercion_crudo = data["label_encoder_mapping"]
-        dicc_desercion = {int(k) if isinstance(k, str) else k: v for k, v in dicc_desercion_crudo.items()}
+
+        dicc_desercion = data["label_encoder_mapping"]
+        
         return (
             data["model"],
             data["label_encoder_mapping"],
