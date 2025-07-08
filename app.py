@@ -64,25 +64,11 @@ if st.button("🔍 Realizar predicción"):
         entrada = pd.DataFrame([fila])
         pred_codificada = modelo.predict(entrada)[0]
 
-         # 🔧 Conversión segura y depuración
-        codigo_predicho = int(pred_codificada)
-
-        st.write("🔢 Código predicho:", codigo_predicho)
-        st.write("🧩 Tipo del valor predicho:", type(codigo_predicho))
-        st.write("🧩 Claves del diccionario:", list(dicc_desercion.keys()))
-        st.write("✅ ¿Clave existe en diccionario?:", codigo_predicho in dicc_desercion)
-
-        st.write("🔍 Diccionario deserción completo:", dicc_desercion)
-        st.write("🔍 Claves exactas con tipo:", [(k, type(k)) for k in dicc_desercion.keys()])
-
-
-        
-        
-        st.write("🔢 Número de Cluster:", pred_codificada)
+        st.success("🔢 Número de Cluster:", pred_codificada)
         st.write(" Riesgo de deserción:", dicc_desercion.keys())
-        st.write("🧪 Tipo:", type(pred_codificada))
-        pred_original = dicc_desercion.get(str(pred_codificada), "Desconocido")
+        #st.write("🧪 Tipo:", type(pred_codificada))
+        #pred_original = dicc_desercion.get(str(pred_codificada), "Desconocido")
 
-        st.success(f"✅ Estado del aprendiz predicho: **{pred_original}**")
+        #st.success(f"✅ Estado del aprendiz predicho: **{pred_original}**")
     except Exception as e:
         st.error(f"❌ Error durante la predicción: {e}")
