@@ -67,7 +67,7 @@ if st.button("🔍 Realizar predicción"):
         st.write("🔢 Código predicho:", pred_codificada)
         
         st.write("🔑 Claves diccionario deserción:", dicc_desercion.keys())
-        st.write("🧪 Tipo:", type(pred_codificada))
+        #st.write("🧪 Tipo:", type(pred_codificada))
         pred_original = dicc_desercion.get(str(pred_codificada), "Desconocido")
 
         st.success(f"✅ Estado del aprendiz predicho: **{pred_original}**")
