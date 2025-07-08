@@ -60,6 +60,9 @@ if st.button("🔍 Realizar predicción"):
 
         entrada = pd.DataFrame([fila])
 
+        st.write("🔍 Claves reales del diccionario:", list(dicc_desercion.keys()))
+        st.write("🔍 Tipos de claves:", [type(k) for k in dicc_desercion.keys()])
+
         pred_codificada = modelo.predict(entrada)[0]
         st.write("🔢 Código predicho:", pred_codificada)
         st.write("🔑 Claves diccionario deserción:", dicc_desercion.keys())
