@@ -26,7 +26,7 @@ modelo, dicc_desercion, dicc_genero, dicc_estado_civil, dicc_estado_aprendiz, df
 inv_genero = {v: k for k, v in dicc_genero.items()}
 inv_estado_civil = {v: k for k, v in dicc_estado_civil.items()}
 inv_estado_aprendiz = {v: k for k, v in dicc_estado_aprendiz.items()}
-dicc_deserción = {int(k): v for k, v in dicc_deserción.items()}
+dicc_deserción = {int(k): v for k, v in dicc_desercion.items()}
 
 # ------------------------------
 # Interfaz de usuario
