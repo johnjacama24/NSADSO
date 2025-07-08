@@ -64,7 +64,7 @@ if st.button("🔍 Realizar predicción"):
         entrada = pd.DataFrame([fila])
         pred_codificada = modelo.predict(entrada)[0]
 
-        st.success("🔢 Número de Cluster:", pred_codificada)
+        st.success(f"🔢 Número de Cluster:", pred_codificada)
         st.write(" Riesgo de deserción:", dicc_desercion.keys())
         #st.write("🧪 Tipo:", type(pred_codificada))
         #pred_original = dicc_desercion.get(str(pred_codificada), "Desconocido")
