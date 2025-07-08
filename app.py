@@ -9,6 +9,9 @@ import pickle
 def cargar_modelo():
     with open("best_model.pkl", "rb") as file:
         data = pickle.load(file)
+# Convertir claves del diccionario a int si están como string
+        dicc_desercion_crudo = data["label_encoder_mapping"]
+        dicc_desercion = {int(k): v for k, v in dicc_desercion_crudo.items()}
         return (
             data["model"],
             data["label_encoder_mapping"],
@@ -60,14 +63,11 @@ if st.button("🔍 Realizar predicción"):
 
         entrada = pd.DataFrame([fila])
 
-        st.write("🔍 Claves reales del diccionario:", list(dicc_desercion.keys()))
-        st.write("🔍 Tipos de claves:", [type(k) for k in dicc_desercion.keys()])
-
         pred_codificada = modelo.predict(entrada)[0]
         st.write("🔢 Código predicho:", pred_codificada)
         st.write("🔑 Claves diccionario deserción:", dicc_desercion.keys())
         #st.write("🧪 Tipo:", type(pred_codificada))
-        pred_original = dicc_desercion.get(str(int(pred_codificada)), "Desconocido")
+        pred_original = dicc_desercion.get(int(pred_codificada), "Desconocido")
 
         st.success(f"✅ Estado del aprendiz predicho: **{pred_original}**")
     except Exception as e:
