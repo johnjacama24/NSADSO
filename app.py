@@ -62,10 +62,20 @@ if st.button("🔍 Realizar predicción"):
         fila["Estado Aprendiz"] = dicc_estado_aprendiz[estado_aprendiz_opcion]
 
         entrada = pd.DataFrame([fila])
-
         pred_codificada = modelo.predict(entrada)[0]
-        st.write("🔢 Número de Cluster:", pred_codificada)
+
+         # 🔧 Conversión segura y depuración
+        codigo_predicho = int(pred_codificada)
+
+        st.write("🔢 Código predicho:", codigo_predicho)
+        st.write("🧩 Tipo del valor predicho:", type(codigo_predicho))
+        st.write("🧩 Claves del diccionario:", list(dicc_desercion.keys()))
+        st.write("✅ ¿Clave existe en diccionario?:", codigo_predicho in dicc_desercion)
+
+
         
+        
+        st.write("🔢 Número de Cluster:", pred_codificada)
         st.write(" Riesgo de deserción:", dicc_desercion.keys())
         st.write("🧪 Tipo:", type(pred_codificada))
         pred_original = dicc_desercion.get(int(pred_codificada), "Desconocido")
