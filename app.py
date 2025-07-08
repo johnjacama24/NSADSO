@@ -67,7 +67,7 @@ if st.button("🔍 Realizar predicción"):
         st.write("🔢 Número de Cluster:", pred_codificada)
         
         st.write(" Riesgo de deserción:", dicc_desercion.keys())
-        #st.write("🧪 Tipo:", type(pred_codificada))
+        st.write("🧪 Tipo:", type(pred_codificada))
         pred_original = dicc_desercion.get(int(pred_codificada), "Desconocido")
 
         st.success(f"✅ Estado del aprendiz predicho: **{pred_original}**")
