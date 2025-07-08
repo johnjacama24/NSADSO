@@ -14,7 +14,7 @@ def cargar_modelo():
         
         return (
             data["model"],
-            data["label_encoder_mapping"],
+            dicc_desercion,
             data["diccionario_genero"],
             data["diccionario_estado_civil"],
             data["diccionario_estado_aprendiz"],
