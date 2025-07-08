@@ -66,7 +66,7 @@ if st.button("🔍 Realizar predicción"):
         pred_codificada = modelo.predict(entrada)[0]
         st.write("🔢 Número de Cluster:", pred_codificada)
         
-        st.write("🔑 Claves diccionario deserción:", dicc_desercion.keys())
+        st.write(" Riesgo de deserción:", dicc_desercion.keys())
         #st.write("🧪 Tipo:", type(pred_codificada))
         #pred_original = dicc_desercion.get(str(pred_codificada), "Desconocido")
 
