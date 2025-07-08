@@ -72,6 +72,9 @@ if st.button("🔍 Realizar predicción"):
         st.write("🧩 Claves del diccionario:", list(dicc_desercion.keys()))
         st.write("✅ ¿Clave existe en diccionario?:", codigo_predicho in dicc_desercion)
 
+        st.write("🔍 Diccionario deserción completo:", dicc_desercion)
+        st.write("🔍 Claves exactas con tipo:", [(k, type(k)) for k in dicc_desercion.keys()])
+
 
         
         
